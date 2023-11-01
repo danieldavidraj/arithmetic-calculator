@@ -49,15 +49,55 @@ extern int yydebug;
 # define YYTOKENTYPE
   enum yytokentype
   {
-    NUMBER = 258
+    num = 258,
+    SIN = 259,
+    COS = 260,
+    TAN = 261,
+    LOG = 262,
+    SQRT = 263,
+    SINH = 264,
+    COSH = 265,
+    TANH = 266,
+    ACOS = 267,
+    ASIN = 268,
+    ATAN = 269,
+    POW = 270,
+    BIN_DEC = 271,
+    DEC_BIN = 272,
+    FACT = 273,
+    uminu = 274
   };
 #endif
 /* Tokens.  */
-#define NUMBER 258
+#define num 258
+#define SIN 259
+#define COS 260
+#define TAN 261
+#define LOG 262
+#define SQRT 263
+#define SINH 264
+#define COSH 265
+#define TANH 266
+#define ACOS 267
+#define ASIN 268
+#define ATAN 269
+#define POW 270
+#define BIN_DEC 271
+#define DEC_BIN 272
+#define FACT 273
+#define uminu 274
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef int YYSTYPE;
+union YYSTYPE
+{
+#line 22 "calc.y"
+ double p;
+
+#line 98 "y.tab.h"
+
+};
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif
